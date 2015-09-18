@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+  <head>
+    <title>IDX Broker DevTools</title>
+    <style>
+      body {
+        font: normal 12px arial,sans-serif
+        margin: 0px;
+        color: #666;
+        min-width: 360px;
+        overflow-x: hidden;
+      }
+      .header {
+          background: #ddd;
+          padding: 20px;
+          text-align: center;
+      }
+      .header-text {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 200px;
+            font-size: 18px;
+            white-space: nowrap;
+            text-align: center;
+            text-transform: uppercase;
+             border: none;
+        background: none;
+        text-decoration: none;
+      }
+      .idx-active-platinum {
+            padding: 10px 20px;
+            text-align: center;
+            background: #8CC645;
+            color: #fff;
+            margin: 10px 0;
+            text-transform: uppercase;
+      }
+      .idx-active-original {
+            padding: 10px 20px;
+            text-align: center;
+            background: #2568AD;
+            color: #fff;
+            margin: 10px 0;
+            text-transform: uppercase;
+      }
+      .idx-not-active {
+           padding: 10px 20px;
+            text-align: center;
+            background: #C65747;
+            color: #fff;
+            margin: 10px 0;
+            text-transform: uppercase;
+      }
+      .header-text a, .header-text img {
+        border: none;
+        background: none;
+        text-decoration: none;
+      }
+      .content {
+            background-color: #f4f4f4;
+            padding: 15px;
+      }
+      .footer {
+          background-color: #fff;
+          padding: 0 15px 10px 15px;
+          min-width: 50px;
+          margin: 20px 0;
+          text-align: center;
+      }
+
+
+      hr {
+        border: 0;
+        height: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+
+    </style>
+
+
+    <script src="popup.js"></script>
+  </head>
+  <body>
+
+    <div class="header">
+        <div class="header-text">
+            <a href="//www.idxbroker.com" target="_blank"><img src="images/idx-logo.png" alt="IDX Broker" width="150" height="37" ></a>
+        </div>
+    </div>
+
+    <div class="content">
+    <p><a href="//middleware.idxbroker.com/mgmt/login.php" target="_blank">Login to IDX Broker</a>. Don't have an account? <a href="https://signup.idxbroker.com/d/imforza" target="_blank">Signup Today!</a></p>
+
+    <hr>
+    <h4>Status:</h4>
+   <!-- Does url have idxco.com?
+    Does url have idxbroker.com?
+
+    Does page have:
+     <div id="IDX-main" -->
+
+    <div class="idx-not-active">
+        This is not an IDX Broker Page
+    </div>
+
+    <div class="idx-active-platinum">
+        This is an IDX Broker Page (Lite or Platinum)
+    </div>
+
+    <div class="idx-active-original">
+        This is an IDX Broker Original Page
+    </div>
+
+
+    <hr>
+    <h4>Dev Tools:</h4>
+    <p>This is only valid for lite and platinum pages.</p>
+    <!-- This should be grayed out when not a lite/platinum page -->
+    <input id="force-mobile" type="checkbox"> Force Mobile Wrapper (?mobile)
+    <br />
+    <input type="checkbox"> Disable Wrapper / Custom CSS / Subheaders (?bare)
+    <br />
+    <input type="checkbox"> Disable Wrappers (?nowrapper)
+    <br />
+    <input type="checkbox"> Disable Custom CSS (?nocss)
+    <br />
+    <input type="checkbox"> Disable SubHeader (?nosubheader)
+    
+    <!-- Example of using multiple url appendages: ?mobile&nosubheader -->
+    </div>
+
+    <div class="footer">
+        <div class="popup-logo">
+            Built by<br />
+            <a href="//www.imforza.com" target="_blank"><img src="images/imforza-logo.png" width="128" height="37" style="height:25px;width:auto;"></a>
+        </div>
+    </div>
+
+  </body>
+</html>
+
