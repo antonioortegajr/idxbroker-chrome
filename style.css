@@ -1,0 +1,73 @@
+  body {
+    font: normal 12px arial,sans-serif
+    margin: 0px;
+    color: #666;
+    min-width: 360px;
+    overflow-x: hidden;
+  }
+  .header {
+      background: #ddd;
+      padding: 20px;
+      text-align: center;
+  }
+  .header-text {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 200px;
+        font-size: 18px;
+        white-space: nowrap;
+        text-align: center;
+        text-transform: uppercase;
+         border: none;
+    background: none;
+    text-decoration: none;
+  }
+  .idx-active-platinum {
+        padding: 10px 20px;
+        text-align: center;
+        background: #8CC645;
+        color: #fff;
+        margin: 10px 0;
+        text-transform: uppercase;
+  }
+  .idx-active-original {
+        padding: 10px 20px;
+        text-align: center;
+        background: #2568AD;
+        color: #fff;
+        margin: 10px 0;
+        text-transform: uppercase;
+  }
+  .idx-not-active {
+       padding: 10px 20px;
+        text-align: center;
+        background: #C65747;
+        color: #fff;
+        margin: 10px 0;
+        text-transform: uppercase;
+  }
+  .header-text a, .header-text img {
+    border: none;
+    background: none;
+    text-decoration: none;
+  }
+  .content {
+        background-color: #f4f4f4;
+        padding: 15px;
+  }
+  .footer {
+      background-color: #fff;
+      padding: 0 15px 10px 15px;
+      min-width: 50px;
+      margin: 20px 0;
+      text-align: center;
+  }
+
+
+  hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
