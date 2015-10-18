@@ -25,10 +25,38 @@ chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
     //is this pt or lt?
     else if(p_l > -1 || p_l_i > -1 || p_l_m > -1) {
         document.getElementById('idx-page-or-not').innerHTML='<a href="is_pt.html"> is an IDX Broker Page (Lite or Platinum)</a>';
-        document.getElementById('appendages').innerHTML='<input id="force-mobile" type="checkbox"> Force Mobile Wrapper (?mobile)<br /><input type="checkbox"> Disable Wrapper / Custom CSS / Subheaders (?bare)<br /><input type="checkbox"> Disable Wrappers (?nowrapper)<br /><input type="checkbox"> Disable Custom CSS (?nocss)<br /><input type="checkbox"> Disable SubHeader (?nosubheader)';
+        document.getElementById('appendages').innerHTML='<select id="append"><option value="none">Use URL appendage</option><option value="nowrapper">remove wrapper</option><option value="nocss">remove css</options><option value="nosubheader">remove subheaders</option><option value="bare">remove wrapper, css, and subheaders</option><option value="mobile">force IDX Mobile page</option></select><div id="log"></div>';
+
+        var log = document.getElementById("log");
+        // Adding listener
+        var sel = document.getElementById("append");
+        sel.addEventListener("change", function(e){
+          //deterimine of the currtne tab has a ? and handle
+          if (sel.value != "none"){
+             if (url.indexOf('?') > -1){
+                var append = '&'
+              }
+          else{
+            var append = '?'
+              }
+          //add appendage from selection
+          var goto = url+append+sel.value;
+          chrome.tabs.update(null, {url: goto});
+        }
+        else {
+          log.innerHTML="<a href=\"https://youtu.be/yMNN78n7Dno\"><br/>URL appendages video</a>";
+        }
+        });
+
+        // Create event and fire it.
+        var changeEvent = document.createEvent("HTMLEvents");
+        changeEvent.initEvent("change",true,true);
+        sel.dispatchEvent(changeEvent);
       }
       //decalre this page as not V1, pt or lt
     else{
         document.getElementById('idx-page-or-not').innerHTML='<a href="not_idx.html">This is not an IDX Broker Page<a>';
     }
+
+
 });
