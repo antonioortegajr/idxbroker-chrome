@@ -19,7 +19,7 @@ This extension is not an official IDX Broker extension, and is not supported by 
 
 ## Contributions
 
-Anyone is welcome to contribute. Please [read the guidelines](https://github.com/yoast/wordpress-seo/blob/master/CONTRIBUTING.md) for contributing to this repository.
+Anyone is welcome to contribute. Please [read the guidelines](https://github.com/blog/1184-contributing-guidelines) for contributing to this repository.
 
 There are various ways you can contribute:
 

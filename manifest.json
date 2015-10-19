@@ -10,8 +10,8 @@
   },
   "browser_action": {
      "default_icon": {
-            "19": "images/idx-19.png",
-            "38": "images/idx-48.png"
+            "19": "assets/images/idx-19.png",
+            "38": "assets/images/idx-48.png"
           },
     "default_popup": "popup.html",
     "default_title": "IDX Broker DevTools"
@@ -20,8 +20,8 @@
   	    "activeTab","tabs", "http://*/*", "https://*/*"
   	  ],
   "icons" : {
-    "48" : "images/idx-48.png",
-    "128" : "images/idx-128.png"
+    "48" : "assets/images/idx-48.png",
+    "128" : "assets/images/idx-128.png"
   },
   "manifest_version": 2
 }
