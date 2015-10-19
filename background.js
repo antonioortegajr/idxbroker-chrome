@@ -20,12 +20,12 @@ chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
 
     //is this an v1 page?
     if(og_1 > -1 || og_2 > -1 || og_3 > -1 || og_4 > -1 || og_5 > -1 || og_6 > -1 || og_7 > -1 || og_8 > -1 || og_9 > -1) {
-        document.getElementById('idx-page-or-not').innerHTML='<a href="is_v1.html">is an IDX Broker Original page</a>';
+        document.getElementById('idx-page-or-not').innerHTML='is an IDX Broker Original page.</a><p>Click here for <a href="is_v1.html">common support issues</a>.<br/><br/>Encourage the client to <a href="http://support.idxbroker.com/customer/portal/articles/1920448-migrating-to-idx-broker-lite" target="_blank">migrate to Lite</a> or <a href="http://support.idxbroker.com/customer/portal/articles/1917489-migrating-to-platinum" target="_blank">Platinum<a/>.</p>';
     }
     //is this pt or lt?
     else if(p_l > -1 || p_l_i > -1 || p_l_m > -1) {
-        document.getElementById('idx-page-or-not').innerHTML='<a href="is_pt.html"> is an IDX Broker Page (Lite or Platinum)</a>';
-        document.getElementById('appendages').innerHTML='<select id="append"><option value="none">Use URL appendage</option><option value="nowrapper">remove wrapper</option><option value="nocss">remove css</options><option value="nosubheader">remove subheaders</option><option value="bare">remove wrapper, css, and subheaders</option><option value="mobile">force IDX Mobile page</option></select><div id="log"></div>';
+        document.getElementById('idx-page-or-not').innerHTML='is an IDX Broker Page (Lite or Platinum).<br/><br/>Common issues: Missing Images, Missing Listings, etc <br/><a href="is_pt.html">Click here for more on these</a>.<br/><p>Any enhancement requests should be submitted to the <a href="http://developers.idxbroker.com/forums/forum/enhancements/" target="_blank">Developer Partner forums</a></p>';
+        document.getElementById('appendages').innerHTML='<select id="append"><option value="none">Use URL appendage</option><option value="nowrapper">remove wrapper</option><option value="nocss">remove css</options><option value="nosubheader">remove subheaders</option><option value="bare">remove wrapper, css, and sub headers</option><option value="mobile">force IDX Mobile page</option></select><div id="log"></div>';
 
         var log = document.getElementById("log");
         // Adding listener
@@ -41,10 +41,11 @@ chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
               }
           //add appendage from selection
           var goto = url+append+sel.value;
+          log.innerHTML="appending "+sel.value;
           chrome.tabs.update(null, {url: goto});
         }
         else {
-          log.innerHTML="<a href=\"https://youtu.be/yMNN78n7Dno\"><br/>URL appendages video</a>";
+          log.innerHTML="<a href=\"https://youtu.be/yMNN78n7Dno\" target=\"_blank\"><br/>URL appendages help video</a>";
         }
         });
 
@@ -55,7 +56,7 @@ chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
       }
       //decalre this page as not V1, pt or lt
     else{
-        document.getElementById('idx-page-or-not').innerHTML='<a href="not_idx.html">This is not an IDX Broker Page<a>';
+        document.getElementById('idx-page-or-not').innerHTML='This is not an IDX Broker Page. As such IDX Broker support can\'t really trouble shoot it.<br/><br/>If the issue is an IDX Broker element such as a widget on this page, <a href="not_idx.html">more info here<a>.';
     }
 
 
